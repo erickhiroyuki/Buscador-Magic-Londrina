@@ -7,7 +7,7 @@ O objetivo do programa é melhorar a velocidade de pesquisa de cartas de Magic e
 
 ## Como funciona:
 *****************************
-Ao rodar o programa, é necessário inserir o nome da carta desejada para pesquisa, em seguida o script verifica se a carta existe no banco de dados do Scryfall e returna a carta com a melhor conpatibiidade, caso não exista, o programa vai dar um reprompt. Com o web scrapping do *_BeautifulSoup_* é póssivel extrair informaçoes da carta desejada em cada uma das lojas, retornando em forma tabulada os dados obtidos.
+Ao rodar o programa, é necessário inserir o nome da carta desejada para pesquisa, em seguida o script verifica se a carta existe no banco de dados do Scryfall e retorna a carta com a melhor conpatibiidade, caso não exista, o programa vai dar um reprompt. Com a carta veirificada, é feito um web scrapping utilizando o *_BeautifulSoup_*, no qual é possível extrair informações da carta desejada em cada uma das lojas, retornando em forma tabulada os dados obtidos.
 
 ## Pip:
 
