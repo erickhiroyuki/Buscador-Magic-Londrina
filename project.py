@@ -96,44 +96,33 @@ def get_info(*args):
 
 
 def get_tables(card_info):
-    n = 0
-    try:
-        if card_info["Piedade"][1] == "Nenhum resultado encontrado":
-            headers = ["Piedade"]
-            values = [["Nenhum resultado encontrado"]]
-            print(tabulate(values, headers=headers, tablefmt="grid"))
-        else:
-            headers = ["Piedade", "Nome PT", "Nome ING", "Coleção", "Qualidade", "Quantidade", "Preço"]
-            values = [[key, *value.split("@")] for key, value in card_info["Piedade"].items()]
-            print(tabulate(values, headers=headers, tablefmt="grid"))
-    except KeyError:
-        n = n + 1
-        pass
-    try:
-        if card_info["Wlad"][1] == "Nenhum resultado encontrado":
-            headers = ["Wlad"]
-            values = [["Nenhum resultado encontrado"]]
-            print(tabulate(values, headers=headers, tablefmt="grid"))
-        else:
-            headers = ["Wlad", "Nome PT", "Nome ING", "Coleção", "Qualidade", "Quantidade", "Preço"]
-            values = [[key, *value.split("@")] for key, value in card_info["Wlad"].items()]
-            print(tabulate(values, headers=headers, tablefmt="grid"))
-    except KeyError:
-        n = n + 1
-        pass
-    try:
-        if card_info["basdao"][1] == "Nenhum resultado encontrado":
-            headers = ["basdao"]
-            values = [["Nenhum resultado encontrado"]]
-            print(tabulate(values, headers=headers, tablefmt="grid"))
-        else:
-            headers = ["basdao", "Nome PT", "Nome ING", "Coleção", "Qualidade", "Quantidade", "Preço"]
-            values = [[key, *value.split("@")] for key, value in card_info["basdao"].items()]
-            print(tabulate(values, headers=headers, tablefmt="grid"))
-    except KeyError:
-        n = n + 1
-        pass
-    return n
+
+    if card_info["Piedade"][1] == "Nenhum resultado encontrado":
+        headers = ["Piedade"]
+        values = [["Nenhum resultado encontrado"]]
+        print(tabulate(values, headers=headers, tablefmt="grid"))
+    else:
+        headers = ["Piedade", "Nome PT", "Nome ING", "Coleção", "Qualidade", "Quantidade", "Preço"]
+        values = [[key, *value.split("@")] for key, value in card_info["Piedade"].items()]
+        print(tabulate(values, headers=headers, tablefmt="grid"))
+
+    if card_info["Wlad"][1] == "Nenhum resultado encontrado":
+        headers = ["Wlad"]
+        values = [["Nenhum resultado encontrado"]]
+        print(tabulate(values, headers=headers, tablefmt="grid"))
+    else:
+        headers = ["Wlad", "Nome PT", "Nome ING", "Coleção", "Qualidade", "Quantidade", "Preço"]
+        values = [[key, *value.split("@")] for key, value in card_info["Wlad"].items()]
+        print(tabulate(values, headers=headers, tablefmt="grid"))
+
+    if card_info["basdao"][1] == "Nenhum resultado encontrado":
+        headers = ["basdao"]
+        values = [["Nenhum resultado encontrado"]]
+        print(tabulate(values, headers=headers, tablefmt="grid"))
+    else:
+        headers = ["basdao", "Nome PT", "Nome ING", "Coleção", "Qualidade", "Quantidade", "Preço"]
+        values = [[key, *value.split("@")] for key, value in card_info["basdao"].items()]
+        print(tabulate(values, headers=headers, tablefmt="grid"))
 
 
 def get_card(card_name):
